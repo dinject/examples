@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     compile('io.dinject:dinject:1.6')
-    compile('io.dinject:dinject-controller:1.6-SNAPSHOT')
+    compile('io.dinject:dinject-controller:1.6')
     compile('io.javalin:javalin:2.8.0')
     compile('com.fasterxml.jackson.core:jackson-databind:2.9.8')
 
@@ -27,7 +27,7 @@ dependencies {
 
 
     kapt('io.dinject:dinject-generator:1.6')
-    kapt('io.dinject:javalin-generator:1.6-SNAPSHOT')
+    kapt('io.dinject:javalin-generator:1.6')
 
     testCompile('junit:junit:4.12')
 }
