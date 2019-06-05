@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>coffee</groupId>
+  <artifactId>main</artifactId>
+  <version>1.1-SNAPSHOT</version>
+
+  <parent>
+    <groupId>org.avaje</groupId>
+    <artifactId>java11-parent</artifactId>
+    <version>1.1</version>
+  </parent>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>coffee</groupId>
+      <artifactId>heater</artifactId>
+      <version>1.1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>coffee</groupId>
+      <artifactId>pump</artifactId>
+      <version>1.1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.avaje.composite</groupId>
+      <artifactId>logback</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.dinject</groupId>
+      <artifactId>dinject</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.dinject</groupId>
+      <artifactId>dinject-generator</artifactId>
+      <version>1.2</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.avaje.composite</groupId>
+      <artifactId>junit</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>
