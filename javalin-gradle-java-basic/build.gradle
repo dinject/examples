@@ -13,7 +13,7 @@ dependencies {
     compile('io.dinject:dinject:1.6')
     compile('io.dinject:dinject-controller:1.6')
     compile('com.fasterxml.jackson.core:jackson-databind:2.9.8')
-    
+
     compile('org.avaje.composite:logback:1.1')
 
     annotationProcessor('io.dinject:dinject-generator:1.6')
@@ -33,10 +33,3 @@ tasks {
     }
 }
 
-//test {
-//
-//}
-//test {
-//    testLogging.showStandardStreams = true
-//    testLogging.exceptionFormat = 'full'
-//}
