@@ -41,7 +41,7 @@
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>dinject</artifactId>
-      <version>1.6</version>
+      <version>1.8</version>
     </dependency>
 
     <dependency>
@@ -55,7 +55,7 @@
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>dinject-generator</artifactId>
-      <version>1.6</version>
+      <version>1.8</version>
       <scope>provided</scope>
     </dependency>
 
@@ -79,6 +79,7 @@
 
 
   <build>
+    <finalName>app</finalName>
     <plugins>
 
       <plugin>

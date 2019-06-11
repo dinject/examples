@@ -5,11 +5,7 @@ import io.dinject.controller.InvalidPathArgumentException;
 import io.dinject.controller.InvalidTypeArgumentException;
 import io.dinject.controller.WebRoutes;
 import io.javalin.Javalin;
-//import org.eclipse.jetty.server.Connector;
-//import org.eclipse.jetty.server.Server;
-//import org.eclipse.jetty.server.ServerConnector;
 
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,11 +16,10 @@ public class Main {
 
     Javalin app = Javalin.create().disableStartupBanner();
 
-    app.accessManager((handler, ctx, permittedRoles) -> {
-      System.out.println("allow access ...");
-      handler.handle(ctx);
-    });
-
+//    app.accessManager((handler, ctx, permittedRoles) -> {
+//      System.out.println("allow access ...");
+//      handler.handle(ctx);
+//    });
 
     app.exception(InvalidTypeArgumentException.class, (exception, ctx) -> {
 
