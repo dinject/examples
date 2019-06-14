@@ -13,6 +13,11 @@ import java.util.List;
 
 import static org.example.myapp.web.AppRoles.ADMIN;
 
+/**
+ * Hello resource manager.
+ * <p>
+ * Simple API for Hello resources.
+ */
 @Controller
 @Path("/hello")
 class HelloController {
@@ -24,6 +29,14 @@ class HelloController {
     this.myService = myService;
   }
 
+  /**
+   * Return the Hello DTO.
+   *
+   * @param id         The hello Id.
+   * @param name       The name of the hello
+   * @param otherParam Optional other parameter
+   * @return The Hello DTO given the id and name.
+   */
   @Get("/:id/:name")
   HelloDto hello(int id, String name, String otherParam) {
     return new HelloDto(id, name, otherParam);

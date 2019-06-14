@@ -1,4 +1,4 @@
 # example-basic
-Basic DInject example using Maven
+Basic Dependency injection example
 
 Dependency injection using DInject source code generation
