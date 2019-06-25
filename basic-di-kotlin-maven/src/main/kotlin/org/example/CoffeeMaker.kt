@@ -3,8 +3,7 @@ package org.example
 import javax.inject.Singleton
 
 @Singleton
-class CoffeeMaker(val pump: Pump , val grinder: Grinder)  {
-
+class CoffeeMaker(private val pump: Pump , private val grinder: Grinder)  {
 
   fun makeCoffee() {
 

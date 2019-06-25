@@ -10,14 +10,16 @@ repositories {
 
 dependencies {
     compile('io.javalin:javalin:2.8.0')
-    compile('io.dinject:dinject:1.6')
-    compile('io.dinject:dinject-controller:1.6')
+    compile('io.dinject:dinject:1.8')
+    compile('io.dinject:dinject-controller:1.7-SNAPSHOT')
     compile('com.fasterxml.jackson.core:jackson-databind:2.9.8')
+
+    compile 'io.swagger.core.v3:swagger-annotations:2.0.8'
 
     compile('org.avaje.composite:logback:1.1')
 
-    annotationProcessor('io.dinject:dinject-generator:1.6')
-    annotationProcessor('io.dinject:javalin-generator:1.6')
+    annotationProcessor('io.dinject:dinject-generator:1.8')
+    annotationProcessor('io.dinject:javalin-generator:1.7-SNAPSHOT')
 
     testCompile('junit:junit:4.12')
 }
