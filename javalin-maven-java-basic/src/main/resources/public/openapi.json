@@ -1,0 +1,465 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Example service",
+    "description" : "Example Javalin controllers with Java and Maven",
+    "version" : ""
+  },
+  "paths" : {
+    "/bars" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bars/:id" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Bar"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bars/find/:code" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "code",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Bar"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/baz" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Baz"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Baz"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "integer",
+                  "format" : "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/baz/:id" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Baz"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/baz/findbyname/:name" : {
+      "get" : {
+        "summary" : "Find the baz by name",
+        "description" : "This is some more comments about this method.",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "The list of baz",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Baz"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hello/:id" : {
+      "delete" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "No content"
+          }
+        }
+      }
+    },
+    "/hello/:id/:date" : {
+      "get" : {
+        "summary" : "Return the Hello DTO",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "The hello Id.",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "date",
+          "in" : "path",
+          "description" : "The name of the hello",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "otherParam",
+          "in" : "query",
+          "description" : "Optional other parameter",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "The Hello DTO given the id and name.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HelloDto"
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : true
+      }
+    },
+    "/hello/findbyname/:name" : {
+      "get" : {
+        "summary" : "Find Hellos by name",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "description" : "The name to search for",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "otherParam",
+          "in" : "query",
+          "description" : "My option parameter",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "The Hellos that we found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/HelloDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hello/message" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hello/savebean/:foo" : {
+      "post" : {
+        "summary" : "Save the hello using json body",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "foo",
+          "in" : "path",
+          "description" : "The hello doo id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "The hello body as json",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/HelloDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "No content"
+          }
+        }
+      }
+    },
+    "/hello/saveform" : {
+      "post" : {
+        "summary" : "Create the new Hello using a form",
+        "description" : "",
+        "requestBody" : {
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/HelloForm"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "No content"
+          }
+        }
+      }
+    },
+    "/hello/saveform2" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "requestBody" : {
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "email" : {
+                    "type" : "string"
+                  },
+                  "url" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "No content"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Bar" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Baz" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "startDate" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }
+      },
+      "HelloDto" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "otherParam" : {
+            "type" : "string"
+          },
+          "gid" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "whenAction" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      },
+      "HelloForm" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "url" : {
+            "type" : "string"
+          },
+          "startDate" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }
+      }
+    }
+  }
+}

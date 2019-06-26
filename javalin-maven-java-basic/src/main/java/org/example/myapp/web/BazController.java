@@ -15,6 +15,13 @@ class BazController extends BaseController<Baz,Long> {
     super(repository);
   }
 
+  /**
+   * Find the baz by name.
+   *
+   * This is some more comments about this method.
+   *
+   * @return The list of baz
+   */
   @Get("findbyname/:name")
   List<Baz> searchByName(String name) {
 

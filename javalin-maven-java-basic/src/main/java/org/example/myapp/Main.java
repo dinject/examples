@@ -6,6 +6,7 @@ import io.dinject.controller.InvalidTypeArgumentException;
 import io.dinject.controller.ValidationException;
 import io.dinject.controller.WebRoutes;
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
@@ -22,6 +23,7 @@ public class Main {
     Javalin app = Javalin.create(config -> {
       config.showJavalinBanner = false;
       config.logIfServerNotStarted = false;
+      config.addStaticFiles("public", Location.CLASSPATH);
     });
 
 //    app.accessManager((handler, ctx, permittedRoles) -> {
