@@ -12,8 +12,8 @@ public class MyService {
   public List<HelloDto> findAll() {
 
     List<HelloDto> list = new ArrayList<>();
-    list.add(new HelloDto(12, "Jim"));
-    list.add(new HelloDto(13, "Spock"));
+    list.add(new HelloDto(12, "Jim", "asd"));
+    list.add(new HelloDto(13, "Spock", "456456"));
 
     return list;
   }
