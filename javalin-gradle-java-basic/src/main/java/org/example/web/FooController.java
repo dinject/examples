@@ -19,7 +19,13 @@ class FooController {
     return new ArrayList<>();
   }
 
-  @Get(":id")
+  /**
+   * Find the foo by id.
+   *
+   * @param id The foo identifier
+   * @return The foo or 404
+   */
+  @Get("/:id")
   Foo getById(UUID id) {
 
     Foo foo = new Foo();
@@ -30,6 +36,14 @@ class FooController {
     return foo;
   }
 
+  /**
+   * Save the foo.
+   * <p>
+   * This will perform an upsert and update the foo if it already exists.
+   *
+   * @param foo The foo payload
+   * @return The id of the foo inserted or updated.
+   */
   @Post
   UUID save(Foo foo) {
 

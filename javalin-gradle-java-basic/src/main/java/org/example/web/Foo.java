@@ -7,7 +7,6 @@ public class Foo {
 
   public UUID id;
 
-/  @Size()
   public String name;
 
   public LocalDate startDate;
