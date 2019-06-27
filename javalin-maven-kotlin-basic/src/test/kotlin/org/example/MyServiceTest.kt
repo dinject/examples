@@ -1,6 +1,7 @@
 package org.example
 
 import io.dinject.SystemContext
+import org.example.service.MyService
 import org.junit.Test
 
 class MyServiceTest {

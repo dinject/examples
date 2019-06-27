@@ -1,6 +1,7 @@
 package org.example
 
 import io.dinject.SystemContext
+import org.example.web.HelloController
 import org.junit.Test
 import kotlin.test.assertNotNull
 
