@@ -37,7 +37,8 @@
           "required" : true,
           "schema" : {
             "type" : "integer",
-            "format" : "int64"
+            "format" : "int64",
+            "nullable" : false
           }
         } ],
         "responses" : {
@@ -83,16 +84,20 @@
         "properties" : {
           "id" : {
             "type" : "integer",
-            "format" : "int64"
+            "format" : "int64",
+            "nullable" : false
           },
           "email" : {
-            "type" : "string"
+            "type" : "string",
+            "nullable" : false
           },
           "url" : {
-            "type" : "string"
+            "type" : "string",
+            "nullable" : false
           },
           "description" : {
-            "type" : "string"
+            "type" : "string",
+            "nullable" : false
           }
         }
       },
@@ -100,14 +105,18 @@
         "type" : "object",
         "properties" : {
           "email" : {
-            "type" : "string"
+            "type" : "string",
+            "format" : "email",
+            "nullable" : false
           },
           "id" : {
             "type" : "integer",
-            "format" : "int64"
+            "format" : "int64",
+            "nullable" : false
           },
           "other" : {
-            "type" : "string"
+            "type" : "string",
+            "nullable" : false
           }
         }
       }
