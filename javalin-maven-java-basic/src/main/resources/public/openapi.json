@@ -34,7 +34,8 @@
           "required" : true,
           "schema" : {
             "type" : "integer",
-            "format" : "int64"
+            "format" : "int64",
+            "nullable" : false
           }
         } ],
         "responses" : {
@@ -194,7 +195,8 @@
           "required" : true,
           "schema" : {
             "type" : "integer",
-            "format" : "int32"
+            "format" : "int32",
+            "nullable" : false
           }
         } ],
         "responses" : {
@@ -215,7 +217,8 @@
           "required" : true,
           "schema" : {
             "type" : "integer",
-            "format" : "int32"
+            "format" : "int32",
+            "nullable" : false
           }
         }, {
           "name" : "date",
@@ -396,7 +399,8 @@
         "properties" : {
           "id" : {
             "type" : "integer",
-            "format" : "int64"
+            "format" : "int64",
+            "nullable" : false
           },
           "name" : {
             "type" : "string"
@@ -424,7 +428,8 @@
         "properties" : {
           "id" : {
             "type" : "integer",
-            "format" : "int32"
+            "format" : "int32",
+            "nullable" : false
           },
           "name" : {
             "type" : "string"
@@ -446,10 +451,15 @@
         "type" : "object",
         "properties" : {
           "name" : {
-            "type" : "string"
+            "maxLength" : 150,
+            "minLength" : 2,
+            "type" : "string",
+            "nullable" : false
           },
           "email" : {
-            "type" : "string"
+            "maxLength" : 100,
+            "type" : "string",
+            "format" : "email"
           },
           "url" : {
             "type" : "string"

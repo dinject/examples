@@ -12,10 +12,6 @@ public class HelloDto {
 
   private Instant whenAction;
 
-  public HelloDto(int id, String name) {
-    this(id, name, null);
-  }
-
   public HelloDto(int id, String name, String otherParam) {
     this.id = id;
     this.name = name;
