@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Controller
 @Path("/foo")
-class FooController {
+public class FooController {
 
   @Get
   List<Foo> getAll() {
@@ -26,7 +26,7 @@ class FooController {
    * @return The foo or 404
    */
   @Get("/:id")
-  Foo getById(UUID id) {
+  Foo getById(long id) {
 
     Foo foo = new Foo();
     foo.id = id;

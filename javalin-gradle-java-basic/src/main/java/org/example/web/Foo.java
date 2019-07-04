@@ -1,11 +1,11 @@
 package org.example.web;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class Foo {
 
-  public UUID id;
+  public long id;
+  //public UUID id;
 
   public String name;
 
