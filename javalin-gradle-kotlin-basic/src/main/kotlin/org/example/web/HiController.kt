@@ -1,9 +1,8 @@
 package org.example.web
 
-import io.dinject.controller.Controller
-import io.dinject.controller.Get
-import io.dinject.controller.Path
+import io.dinject.controller.*
 import org.example.service.MyService
+import java.time.LocalDate
 
 /**
  * Our Hi resource manager.
@@ -14,27 +13,36 @@ import org.example.service.MyService
 @Path("/")
 class HiController(private val myService: MyService) {
 
-    /**
-     * Return all the Hi's we have.
-     */
-    @Get
-    fun getAll(): String {
-        return myService.hello() + " hello"
-    }
+  /**
+   * Return all the Hi's we have.
+   */
+  @Get
+  fun getAll(): String {
+    return myService.hello() + " hello"
+  }
 
-    /**
-     * Get by hi identifier.
-     *
-     * Performs a useful thing with hi resources.
-     *
-     * @param id The identifier
-     * @param other The other thing
-     */
-    @Get("/:id")
-    fun getById(id: Long, other: String?): HiDto {
+  /**
+   * Get by hi identifier.
+   *
+   * Performs a useful thing with hi resources.
+   *
+   * @param id The identifier
+   * @param other The other thing
+   */
+  @Get("/:id")
+  fun getById(id: Long, other: String?): HiDto {
 
-        return HiDto(id, other)
-    }
+    return HiDto(id, other)
+  }
 
-    class HiDto(id: Long?, var other: String?)
+  @Post
+  @Form
+  fun saveIt(form: SaveForm) {
+
+    println("saving $form")
+  }
+
+  data class SaveForm(var id: Long, var name: String, var someDate: LocalDate?)
+
+  class HiDto(id: Long?, var other: String?)
 }
