@@ -23,13 +23,13 @@ dependencies {
   compile('com.fasterxml.jackson.core:jackson-databind:2.9.9')
 
   compile('io.dinject:dinject:1.11')
-  compile('io.dinject:dinject-controller:1.9')
+  compile('io.dinject:dinject-controller:1.11')
   compile('io.dinject:controller-validator-hibernate:1.1')
 
   implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8')
 
   kapt('io.dinject:dinject-generator:1.11')
-  kapt('io.dinject:javalin-generator:1.10-SNAPSHOT')
+  kapt('io.dinject:javalin-generator:1.11')
 
   testCompile('junit:junit:4.12')
 }
