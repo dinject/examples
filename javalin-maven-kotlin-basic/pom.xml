@@ -13,13 +13,14 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <kotlin.version>1.3.31</kotlin.version>
+    <kotlin.version>1.3.60</kotlin.version>
+    <java.version>11</java.version>
     <kotlin.code.style>official</kotlin.code.style>
     <junit.version>4.12</junit.version>
 
     <main.class>org.example.myapp.Main</main.class>
     <swagger.version>2.0.8</swagger.version>
-    <dinject-generator.version>1.9</dinject-generator.version>
+    <dinject-generator.version>1.14</dinject-generator.version>
 
   </properties>
 
@@ -40,25 +41,31 @@
     <dependency>
       <groupId>io.javalin</groupId>
       <artifactId>javalin</artifactId>
-      <version>3.1.0</version>
+      <version>3.6.0</version>
     </dependency>
 
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.9.9</version>
+      <version>2.10.1</version>
     </dependency>
+
+<!--    <dependency>-->
+<!--      <groupId>javax.annotation</groupId>-->
+<!--      <artifactId>javax.annotation-api</artifactId>-->
+<!--      <version>1.3.2</version>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>dinject</artifactId>
-      <version>1.10</version>
+      <version>1.14</version>
     </dependency>
 
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>dinject-controller</artifactId>
-      <version>1.9</version>
+      <version>1.14</version>
     </dependency>
 
     <dependency>
@@ -71,6 +78,25 @@
       <groupId>io.swagger.core.v3</groupId>
       <artifactId>swagger-annotations</artifactId>
       <version>${swagger.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.ebean</groupId>
+      <artifactId>ebean</artifactId>
+      <version>12.1.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.ebean</groupId>
+      <artifactId>ebean-querybean</artifactId>
+      <version>12.1.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.ebean</groupId>
+      <artifactId>ebean-test</artifactId>
+      <version>12.1.3</version>
+      <scope>test</scope>
     </dependency>
 
     <!-- test dependencies -->
@@ -94,8 +120,8 @@
 
   <build>
     <finalName>app</finalName>
-    <!--        <sourceDirectory>src/main/kotlin</sourceDirectory>-->
-    <!--        <testSourceDirectory>src/test/kotlin</testSourceDirectory>-->
+    <sourceDirectory>src/main/kotlin</sourceDirectory>
+    <testSourceDirectory>src/test/kotlin</testSourceDirectory>
     <plugins>
 
       <plugin>
@@ -116,18 +142,19 @@
       <plugin>
         <groupId>io.repaint.maven</groupId>
         <artifactId>tiles-maven-plugin</artifactId>
-        <version>2.16-SNAPSHOT</version>
+        <version>2.16</version>
         <extensions>true</extensions>
         <configuration>
           <tiles>
-
             <!-- kotlin compile with kapt support -->
-            <tile>io.avaje.kotlin:kapt:1.1-SNAPSHOT</tile>
-            <tile>io.avaje.kotlin:kapt-javalin:1.1-SNAPSHOT</tile>
-            <tile>io.avaje.kotlin:kapt-dinject:1.1-SNAPSHOT</tile>
+            <tile>io.avaje.kapt:compile:1.1</tile>
+            <tile>io.avaje.kapt:dinject-generator:1.1</tile>
+            <tile>io.avaje.kapt:javalin-generator:1.1</tile>
+            <tile>io.avaje.kapt:querybean-generator:1.1</tile>
 
             <!-- other tiles -->
             <tile>org.avaje.tile:lib-classpath:1.1</tile>
+            <tile>io.ebean.tile:enhancement:12.1.3</tile>
           </tiles>
         </configuration>
       </plugin>
