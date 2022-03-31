@@ -1,4 +1,4 @@
-@ContextModule(name="coffee-heater")
+@InjectModule(name="coffee-heater", provides = Heater.class)
 package coffee.app.heater;
 
-import io.dinject.ContextModule;
+import io.avaje.inject.InjectModule;

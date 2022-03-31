@@ -2,8 +2,8 @@ package coffee.app.main;
 
 import coffee.app.heater.Heater;
 import coffee.app.pump.Pump;
+import jakarta.inject.Singleton;
 
-import javax.inject.Singleton;
 
 @Singleton
 public class CoffeeMaker {

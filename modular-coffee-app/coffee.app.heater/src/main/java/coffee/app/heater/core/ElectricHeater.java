@@ -1,8 +1,7 @@
 package coffee.app.heater.core;
 
 import coffee.app.heater.Heater;
-
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 @Singleton
 public class ElectricHeater implements Heater {

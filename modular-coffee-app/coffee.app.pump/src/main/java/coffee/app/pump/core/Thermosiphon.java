@@ -2,8 +2,8 @@ package coffee.app.pump.core;
 
 import coffee.app.heater.Heater;
 import coffee.app.pump.Pump;
+import jakarta.inject.Singleton;
 
-import javax.inject.Singleton;
 
 @Singleton
 class Thermosiphon implements Pump {

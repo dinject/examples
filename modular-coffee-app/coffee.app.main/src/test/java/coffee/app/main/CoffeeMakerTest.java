@@ -1,16 +1,15 @@
 package coffee.app.main;
 
-import io.dinject.SystemContext;
-import org.junit.Test;
+import io.avaje.inject.BeanScope;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
-
-public class CoffeeMakerTest {
+class CoffeeMakerTest {
 
   @Test
-  public void brew() {
-
-    var maker = SystemContext.getBean(CoffeeMaker.class);
-    maker.brew();
+  void brew() {
+    try (BeanScope scope = BeanScope.newBuilder().build()) {
+      var maker = scope.get(CoffeeMaker.class);
+      maker.brew();
+    }
   }
 }

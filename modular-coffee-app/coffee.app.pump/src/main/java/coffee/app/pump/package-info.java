@@ -1,4 +1,5 @@
-@ContextModule(name = "coffee-pump", dependsOn = "coffee-heater")
+@InjectModule(name = "coffee-pump", requires = Heater.class, provides = Pump.class) //requires =
 package coffee.app.pump;
 
-import io.dinject.ContextModule;
+import coffee.app.heater.Heater;
+import io.avaje.inject.InjectModule;
