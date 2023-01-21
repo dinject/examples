@@ -7,7 +7,7 @@ class CoffeeMakerTest {
 
   @Test
   void brew() {
-    try (BeanScope scope = BeanScope.newBuilder().build()) {
+    try (BeanScope scope = BeanScope.builder().build()) {
       var maker = scope.get(CoffeeMaker.class);
       maker.brew();
     }

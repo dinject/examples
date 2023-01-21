@@ -16,7 +16,7 @@ class Thermosiphon implements Pump {
 
   public void pump() {
     if (heater.isHot()) {
-      System.out.println("=> => pumping core Thermosiphon => =>");
+      System.out.println("=> => pumping core Thermosiphon => => as");
     }
   }
 

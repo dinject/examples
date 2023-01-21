@@ -1,4 +1,4 @@
-@InjectModule(name = "coffee-main", requires = {Heater.class, Pump.class}) //, dependsOn = {"coffee-pump", "coffee-heater"})
+@InjectModule(name = "coffee-main") //, requiresPackages = {Heater.class, Pump.class})
 package coffee.app.main;
 
 import coffee.app.heater.Heater;
